@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.cryptx'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
+    compile group: 'javax.mail', name: 'javax.mail-api', version: '1.6.2'
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.4")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0")
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'mysql:mysql-connector-java'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+
+test {
+    useJUnitPlatform()
+}
+
+
+
+
+
