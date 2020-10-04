@@ -141,6 +141,7 @@ function Table() {
     }
 
     if(errorList.length < 1){
+      console.log(newData)
     let name = newData.name;
     let surname = newData.surname;
     let email = newData.email;

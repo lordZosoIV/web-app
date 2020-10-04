@@ -143,13 +143,14 @@ const LessonTable = ({idx}) =>{
 
 
     let day = newData.day;
+    let subject = newData.subject;
     let startTime = newData.startTime;
     let endTime = newData.endTime;
     console.log(newData)
     console.log(idx)
       
     api.put("/updateLessonById/"+newData.id,null, { params : {
-        day, startTime, endTime
+        day,subject, startTime, endTime
       }})
       .then(res => {
         const dataUpdate = [...data];
